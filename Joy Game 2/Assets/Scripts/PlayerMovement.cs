@@ -13,9 +13,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Score")]
     [SerializeField] private int score = 0;
     public int Score => score;
+    public int TimeHad;
+    public bool menang;
 
     [Header("State")]
     public bool stop;
+    
 
     private Rigidbody2D body;
     private Animator anim;
@@ -107,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (onWall() && !isGrounded())
             {
-                body.gravityScale = 0;
+                body.gravityScale = 7;
                 body.linearVelocity = Vector2.zero;
             }
             else body.gravityScale = 7;
