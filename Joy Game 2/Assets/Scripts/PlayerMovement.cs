@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static event Action<int> OnScoreReduced;
     [Header("Move")]
     [SerializeField] private float speed = 6f;
     [SerializeField] private float jumpPower = 10f;
@@ -40,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (amount <= 0) return;
         score = Mathf.Max(0, score - amount);
-        print(score);
+        OnScoreReduced?.Invoke(amount);
         // nanti bisa tambahin efek: sfx, anim, popup angka, dll
     }
 

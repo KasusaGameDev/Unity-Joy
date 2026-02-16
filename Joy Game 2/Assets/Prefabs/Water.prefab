@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StopperObject2D
   stop: 0
   timer: 0
-  pointReduce: 5
+  pointReduce: 1
   anim: {fileID: 0}
   triggerName: Hit
   destroyDelay: 0
